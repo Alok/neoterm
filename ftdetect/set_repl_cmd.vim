@@ -14,7 +14,13 @@ aug set_repl_cmd
         \ endif
   " Python
   au VimEnter,BufRead,BufNewFile *.py,
-        \ if executable('ipython') |
+        \ if executable('ptipython') |
+        \   call neoterm#repl#set('ptipython') |
+        \ if executable('ipython3') |
+        \   call neoterm#repl#set('ipython3') |
+        \ elseif executable('python3') |
+        \   call neoterm#repl#set('python3') |
+        \ elseif executable('ipython') |
         \   call neoterm#repl#set('ipython') |
         \ elseif executable('python') |
         \   call neoterm#repl#set('python') |
