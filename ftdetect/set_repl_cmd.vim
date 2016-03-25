@@ -14,10 +14,8 @@ aug set_repl_cmd
         \ endif
   " Python
   au VimEnter,BufRead,BufNewFile *.py,
-        \ if executable('ipython3') |
-        \   call neoterm#repl#set('ipython3') |
-        \ elseif executable(g:neoterm_python_repl) |
-        \   call neoterm#repl#set("g:neoterm_python_repl") |
+        \ if executable(g:neoterm_python_repl) |
+        \   call neoterm#repl#set('g:neoterm_python_repl') |
         \ elseif executable('bpython-curses') |
         \   call neoterm#repl#set('bpython-curses') |
         \ elseif executable('bpython') |
@@ -56,3 +54,4 @@ aug set_repl_cmd
         \   call neoterm#repl#set('idris') |
         \ end
 aug END
+
