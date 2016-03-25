@@ -14,16 +14,18 @@ aug set_repl_cmd
         \ endif
   " Python
   au VimEnter,BufRead,BufNewFile *.py,
-        \ if executable('bpython-curses') |
+        \ if executable("g:neoterm_python_repl") |
+        \   call neoterm#repl#set("g:neoterm_python_repl") |
+        \ elseif executable('bpython-curses') |
         \   call neoterm#repl#set('bpython-curses') |
         \ elseif executable('bpython') |
         \   call neoterm#repl#set('bpython') |
-        " \ if executable('ptipython') |
-        " \   call neoterm#repl#set('ptipython') |
         \ elseif executable('ipython3') |
         \   call neoterm#repl#set('ipython3') |
         \ elseif executable('python3') |
         \   call neoterm#repl#set('python3') |
+        \ elseif executable('ptipython') |
+        \   call neoterm#repl#set('ptipython') |
         \ elseif executable('ipython') |
         \   call neoterm#repl#set('ipython') |
         \ elseif executable('python') |
