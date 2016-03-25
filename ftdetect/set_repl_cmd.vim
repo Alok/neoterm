@@ -15,7 +15,7 @@ aug set_repl_cmd
   " Python
   au VimEnter,BufRead,BufNewFile *.py,
         \ if executable(g:neoterm_python_repl) |
-        \   call neoterm#repl#set('g:neoterm_python_repl') |
+        \   call neoterm#repl#set(g:neoterm_python_repl) |
         \ elseif executable('bpython-curses') |
         \   call neoterm#repl#set('bpython-curses') |
         \ elseif executable('bpython') |
